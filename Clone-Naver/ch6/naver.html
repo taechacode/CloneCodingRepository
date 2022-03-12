@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>네이버</title>
+
+        <!--title 옆에 뜨는 작은 이미지, favicon의 경로-->
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+
+        <!--css 파일 경로 설정 및 적용하기-->
+        <link rel="stylesheet" href="./css/naver.css">
+    </head>
+    <body>
+
+        <header>
+            <div id="fixed">고정</div>
+            <!--center 태그는 현재 사용하지 않음-->
+            <div class="center-align"> <!--가운데 정렬용 div-->
+                <!--CSS Inline Style 작성 방법-->
+                <!--속성명 : 속성값; 속성명2 : 속성명2;-->
+                <div id="header-top">
+                    <!--span 태그는 inline 스타일이 자동으로 적용되어 있음.-->
+                    <!--inline은 자기 영역만, inline-block은 width와 height을 적용해줄 수 있음.-->
+                    <!--inline-block은 실제 컨텐츠 외의 영역까지 임의로 영역 설정 가능-->
+                    <span>네이버를 시작페이지로 | </span>
+                    <span>쥬니어네이버 | </span>
+                    <span>해피빈</span>
+                </div>
+                <div id="header-search" style="clear: both;">
+                    <!--href부터는 a 태그 부가정보인 속성(attribute)-->
+                    <a href="https://www.naver.com">
+                        <h1>
+                                <span>네이버</span>
+                            <!--주석(comment)입니다.-->
+                        </h1>
+                    </a>
+
+                    <h2 class="blind">검색창</h2>
+                    <fieldset>
+                        <legend class="blind">검색</legend>
+                        <input />
+
+                        <!--input에는 단순 텍스트 입력뿐만 아니라 마우스 클릭으로 체크가 가능한 box 형태도 있다.-->
+                        <!-- <input type="checkbox" /> -->
+
+                        <!--radio 형태에서는 name으로 서로 다른 radio 버튼들이 같은 group임을 명시해줄 수 있다.-->
+                        <!-- <input type="radio" name="group" /> -->
+                        <!-- <input type="radio" name="group" /> -->
+
+                        <span id="search-keyboard"></span>
+                        <span id="search-history"></span>
+                        <button>
+                            <span class="blind">검색</span>
+
+                            <!--검색용 이미지 span-->
+                            <span id="search-image"></span>
+                        </button>
+                    </fieldset>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <div class="center-align relative">
+                <div id="search-ranking">
+                    <h2 class="blind">실시간 검색어</h2>
+                    <span id="rank-number">1</span>
+                    <span id="rank-title">인기 검색어</span>
+                </div>
+                <ul> <!--unordered list--> <!--순서가 있는 ol 태그도 존재-->
+                    <li>
+                        <a href="">
+                            <span></span>
+                            <span class="blind">카페</span>
+                        </a>
+                    </li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">블로그</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">지식인</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">쇼핑</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">네이버페이</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">네이버쇼핑</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">네이버TV</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">사전</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">뉴스</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">증권</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">부동산</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">지도</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">영화</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">뮤직</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">책</span></a></li> <!-- list item -->
+                    <li><a href=""><span></span><span class="blind">웹툰</span></a></li> <!-- list item -->
+                </ul>
+                <div class="nav-divider"></div>
+            </div>
+        </nav>
+
+        <main>
+            <div id="main-centered" class="center-align">
+
+                <div id="main-first-block">
+                    <div id="main-ad"></div>
+                    <div id="main-login">
+                        <h3>로그인</h3>
+                    </div>
+                </div>
+
+                <div id="main-second-block">
+                    <div class="inline-block">
+                        <div id="main-ytn">
+                            <h3>연합뉴스</h3>
+                            <ol>
+                                <li>충격) 교수님 지금 목아파...</li>
+                                <li>속보) 방송 종료하고 싶어</li>
+                                <li>중대발표 : 다음 수업 언제 할 지 모르겠다</li>
+                            </ol>
+                        </div>
+                        <div id="main-newsstand">
+                            <h3>뉴스스탠드</h3>
+                            <ul>
+                                <li><img src="./img/과학동아.png" alt="과학동아" /></li>
+                                <li><img src="./img/한국일보.png" alt="한국일보" /></li>
+                                <li><img src="./img/osen.png" alt="osen" /></li>
+                                <li><img src="./img/매일경제.png" alt="매일경제" /></li>
+                                <li><img src="./img/파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+                                <li><img src="./img/한국경제TV.png" alt="한국경제TV" /></li>
+                            </ul>
+                        </div>
+                        <div id="main-weather"></div>
+                        <div id="main-second-ad"></div>
+                    </div>
+                </div>
+
+                <div id="main-third-block">
+                    <div id="main-category">
+                        <h3>주제별 보기</h3>
+                    </div>
+                    <div id="main-shopping">
+                        <h3>쇼핑</h3>
+                    </div>
+                </div>
+                
+                <div id="main-fourth-block">
+                    <div id="main-event">
+                        <div>
+                            <h3>이벤트</h3>
+                        </div>
+                        <div id="main-thrid-ad"></div>
+                    </div>
+                </div>
+                
+                <h3>뉴스</h3>
+                <h3>법률</h3>
+                <h3>쇼핑</h3>
+            </div>
+        </main>
+
+        <footer>
+            <div>공지사항</div>
+            <div>Creators</div>
+            <div>회사소개</div>
+        </footer>
+        
+    </body>
+</html>

@@ -1,0 +1,382 @@
+/* '*'는 모든 태그를 의미한다. */
+* {
+    box-sizing: border-box;
+}
+
+/* 브라우저가 기본적으로 주는 margin, padding을 없앰 */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
+}
+
+/* 선택자 (Selector) */
+
+/* div는 많이 쓰이기 때문에 생략할 수도 있다. */
+div#header-center {
+    /* margin: 0 auto;
+    width: 1080px; */
+}
+
+
+.center-align {
+    margin: 0 auto;
+    width: 1080px;
+}
+
+header {
+    height: 170px;
+}
+
+#header-top {
+    float: right;
+    margin-top: 8px;
+}
+
+#header-top span {
+    color: #abc;
+    letter-spacing: -1px; /* 자간 */
+    font-size: 11px;
+    line-height: 22px; /* 한 줄이 차지하는 영역 높이 */
+}
+
+#header-search {
+    clear: both;
+    padding-top: 12px;
+}
+
+div#header-search a {
+    text-decoration: none;
+}
+
+/* > 을 사용하면 바로 밑에 있는 자식 태그 */
+div#header-search h1 {
+    width: 198px;
+    height: 48px;
+
+    /* 이미지 스프라이트 */
+    background-image: url(../img/sp_search.png);
+    background-position: -4px -4px;
+    background-repeat: no-repeat;
+
+    /* vertical-align은 같은 줄에 있는 요소들이 높이가 달라서 생기는 차이를 정렬해준다. */
+    /* vertical-align은 display가 inline, inline-block이어야만 적용된다. */
+    vertical-align: middle;
+
+    /* text-indent: 100%; */
+    /* overflow: hidden; */
+
+    /* 기본적으로는 block으로 되어있기 때문에 하나의 요소가 margin으로 전체 너비를 다 차지해버린다. */
+    /* 그래서 display를 inline-block으로 바꾸어 여러 요소가 한 줄에 위치하도록 지정한다. */
+    display: inline-block;
+
+    position: relative;
+    top: -6px;
+}
+
+/* 꺾쇠 > 없이 쓰면 자손 태그 */
+div#header-search h1 {
+    
+}
+
+div#header-search h1 span { 
+    display: none;
+}
+
+div#header-search h2 {
+    /* display: none; */
+    /* display: none은 스크린리더도 못 읽는다. */
+}
+
+#fixed {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+/* 아래의 속성을 지정하면 스크린리더에서 읽히게끔 할 수 있다. */
+.blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+
+.relative {
+    position: relative;
+}
+
+#header-search fieldset {
+    margin-left: 20px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px;
+    padding-right: 0;
+
+    width: 521px;
+    height: 49px;
+    display: inline-block;
+
+    border-top: 2px solid #03cf5d;
+    border-left: 2px solid #03cf5d;
+    border-right: 2px solid #03cf5d;
+    border-bottom: 2px solid #03cf5d; /* hex 표기법 */
+
+    /* box-sizing을 content-box로 하면 content만 너비가 521px가 된다. */
+    /* box-sizing: content-box; */
+
+    /* 만약 border-box로 바꾸면 border(+padding)까지 합쳐서 521px가 된다. */
+    box-sizing: border-box;
+
+    vertical-align: middle;
+
+    /* fieldset를 relative로 만들면 static 요소가 아니게 되기 때문에 */
+    /* 컨테이닝 블록이 되어 하위 요소인 button의 position에 영향을 미친다. */
+    /* relative는 본래 자신의 static 위치를 기준으로 함. */
+    position: relative;
+}
+
+#header-search fieldset input{
+    /* input에 기본적으로 적용되어 있는 css 속성을 제거 */
+    border: none;
+    padding: 0;
+    outline: none;
+    vertical-align: top;
+    width: 405px;
+    height: 23px;
+}
+
+#header-search fieldset button{
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    
+    background: #03cf5d;
+
+    /* 자신의 컨테이닝 블록 위치를 기준으로 함 */
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+
+#search-keyboard {
+    background-image: url(../img/sp_search.png);
+    background-repeat: no-repeat;
+    background-position: -33px -60px;
+    width: 19px;
+    height: 11px;
+    display: inline-block;
+    margin: 0 6px;
+    padding: 0 10px;
+
+    /* vertical-align을 통해 옆의 #search-history와 평행하게 높이를 맞춰준다. */
+    vertical-align: middle;
+}
+
+#search-history {
+    background-image: url(../img/sp_search.png);
+    background-repeat: no-repeat;
+    background-position: -87px -60px;
+    width: 9px;
+    height: 4px;
+    display: inline-block;
+    margin: 0 6px;
+    vertical-align: middle;
+}
+
+#search-image {
+    background-image: url(../img/sp_search.png);
+    background-position: -3px -60px;
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin: 14px;
+}
+
+nav {
+    height: 46px;
+    border-top: 1px solid #f1f3f6;
+    border-bottom: 1px solid #d1d8e4;
+}
+
+nav ul {
+    display: inline-block;
+    margin: 0;
+    padding: 16px 0 0 4px;
+    list-style: none;
+}
+
+.nav-divider {
+    /* 만약 display를 float: left로 하려면 바로 옆에 위치하는 요소인
+    ul도 float: left로 지정해주어야 왼쪽부터 차례대로 쌓인다. */
+    display: inline-block;
+    margin: 18px 16px 0;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li:first-child span:first-child{
+    width: 25px;
+    background-position: 0 -285px;
+    margin-left: 0;
+}
+
+nav li span:first-child {
+    height: 16px;
+    display: inline-block;
+    background-image: url(../img/sp_nav.png);
+    background-repeat: no-repeat;
+    
+    /* !important를 사용하면 css 최고 우선순위가 된다. */
+    margin-left: 10px;
+}
+
+/* nth-child는 자식 종류를 고려하지 않고 순서를 세고
+nth-of-type은 자식 종류를 고려하여 순서를 센다. */
+
+/* 만약 h3 ... ul ... h3 이런 식으로 있으면
+h3:nth-child(2)는 2번째 h3가 아니라 ul을 선택한다. */
+nav li:nth-child(2) span:first-child {
+    width: 27px;
+    background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+    width: 40px;
+    background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+    width: 40px;
+    background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+    width: 26px;
+    background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+    width: 25px;
+    background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:first-child {
+    width: 35px;
+    background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+    width: 26px;
+    background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+    width: 26px;
+    background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+    width: 26px;
+    background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+    width: 39px;
+    background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+    width: 26px;
+    background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+    width: 26px;
+    background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+    width: 26px;
+    background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+    width: 13px;
+    background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+    width: 26px;
+    background-position: -279px 0;
+}
+
+#search-ranking {
+    position: absolute;
+    top: 16px;
+    right: 100px;
+}
+
+#rank-number {
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
+}
+
+#rank-title {
+    letter-spacing: -1px;
+    font-size: 14px;
+}
+
+main {
+    background-color: #f2f4f7;
+    
+    /* 마진 상쇄를 해결 */
+    display: inline-block;
+    width: 100%;
+}
+
+#main-ad {
+    display: inline-block;
+    width: 740px;
+    height: 120px;
+}
+
+#main-login {
+    float: left;
+    width: 332px;
+    height: 120px;
+    vertical-align: top;
+    background-color: white;
+    margin-bottom: 8px;
+}
+
+#main-ytn {
+    display: inline-block;
+    width: 740px;
+    height: 46px;
+}
+
+#main-newsstand {
+    display: inline-block;
+    width: 740px;
+    height: 246px;
+    background-color: white;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
