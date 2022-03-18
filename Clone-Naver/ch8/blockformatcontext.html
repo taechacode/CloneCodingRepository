@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Block Format Context Test</title>
+    </head>
+    <body>
+
+        <!--overflow 속성-->
+        <!--visible: 기본값으로 내용이 더 길어도 (부모보다) 그대로 보여짐.-->
+        <!--hidden: 내용이 넘치면 자름. 자른 부분은 보이지 않음.-->
+        <!--scroll: 내용이 넘치지 않아도 항상 스크롤바가 보임.-->
+        <!--auto: 내용이 넘칠 때만 자르고 스크롤바가 보임.-->
+        <header>
+
+            <!--https://developer.mozilla.org/ko/docs/Web/Guide/CSS/Block_formatting_context-->
+            <!--부모 div가 무조건 모든 자식에게 속성을 적용시키지 않음.-->
+            <div style="background-color: yellow; height: 150px; overflow: hidden;">
+                <div style="float: right; background-color: green; height: 200px;">둥둥 떠 있는 float 영역</div>
+                <div>
+                    가나다라마바사아자타카타파하가나다라마바사아자타카타파하가나다라마바사아자타카타파하
+                    가나다라마바사아자타카타파하가나다라마바사아자타카타파하가나다라마바사아자타카타파하
+                    가나다라마바사아자타카타파하가나다라마바사아자타카타파하가나다라마바사아자타카타파하
+                    가나다라마바사아자타카타파하가나다라마바사아자타카타파하가나다라마바사아자타카타파하
+                    가나다라마바사아자타카타파하가나다라마바사아자타카타파하가나다라마바사아자타카타파하
+                </div>
+            </div>
+        </header>
+        
+    </body>
+</html>
